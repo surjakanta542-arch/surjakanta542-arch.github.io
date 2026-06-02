@@ -103,9 +103,24 @@ nav ul li a:hover{
 
 @media(max-width:768px){
 
+/* NAVBAR */
+
+nav{
+    padding:15px 20px;
+    flex-direction:row;
+}
+
+.logo{
+    font-size:1.8rem;
+}
+
 .menu-btn{
     display:block;
+    font-size:2rem;
+    z-index:1001;
 }
+
+/* SIDEBAR */
 
 nav ul{
     position:fixed;
@@ -113,18 +128,19 @@ nav ul{
     top:0;
     right:-100%;
 
-    width:250px;
+    width:220px;
     height:100vh;
 
     background:#111827;
 
+    display:flex;
     flex-direction:column;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
+    gap:30px;
 
     transition:.4s ease;
-
-    gap:35px;
 }
 
 nav ul.active{
@@ -132,71 +148,46 @@ nav ul.active{
 }
 
 nav ul li a{
-    font-size:1.2rem;
-}
+    font-size:1.1rem;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+    padding-top:120px;
+    padding-left:20px;
+    padding-right:20px;
+}
 
-    background:linear-gradient(
-        135deg,
-        #0f172a,
-        #1e293b
-    );
+.profile-pic{
+    width:150px;
+    height:150px;
 }
 
 .hero-content h1{
-    font-size:4rem;
-    margin-bottom:15px;
-    transition:.3s;
-}
-
-.hero-content h1:hover{
-    color:#38bdf8;
-    text-shadow:0 0 25px rgba(56,189,248,.8);
+    font-size:2.3rem;
+    line-height:1.2;
 }
 
 .hero-content h2{
-    color:#38bdf8;
-    font-weight:400;
-    margin-bottom:20px;
+    font-size:1rem;
 }
 
 .hero-content p{
-    max-width:700px;
-    margin:auto;
-    color:#cbd5e1;
-    line-height:1.7;
+    font-size:.95rem;
+    line-height:1.8;
 }
 
 .btn{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 35px;
-    border-radius:30px;
-    background:#38bdf8;
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 25px rgba(56,189,248,.5);
+    padding:12px 28px;
+    font-size:1rem;
 }
 
 /* SECTION */
 
 section{
-    padding:80px 10%;
-    animation:fadeUp 1s ease;
+    padding:70px 20px;
+}
 }
 
 .section-title{
@@ -455,7 +446,7 @@ section{
 <div class="logo">SL</div>
 
 <div class="menu-btn" onclick="toggleMenu()">
-    ☰
+    &#9776;
 </div>
 
 <ul id="sidebar">
