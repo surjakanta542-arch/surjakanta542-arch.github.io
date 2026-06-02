@@ -1,168 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surjakanta Lairenmayum | IT Trainer & DTP Specialist</title>
-    <style>
-        * {margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-        body{line-height:1.6;color:#1e293b;background:#f8fafc}
-        .container{max-width:1300px;margin:0 auto;padding:0 20px}
-        header{background:#fff;padding:20px 0;box-shadow:0 1px 3px rgba(0,0,0,.1);position:sticky;top:0;z-index:10}
-        nav{display:flex;justify-content:space-between;align-items:center}
-        .logo{font-weight:700;font-size:1.5rem;color:#2563eb}
-        .nav-links a{margin-left:25px;text-decoration:none;color:#475569;font-weight:500}
-        .btn{background:#2563eb;color:white;padding:10px 20px;border-radius:6px;text-decoration:none}
-        .hero{padding:80px 0;background:linear-gradient(135deg,#f1f5f9 0%,#e2e8f0 100%)}
-        .hero h1{font-size:3rem;color:#1e293b;margin-bottom:20px}
-        .hero .highlight{color:#2563eb}
-        .hero p{font-size:1.2rem;color:#64748b;max-width:600px;margin-bottom:30px}
-        section{padding:70px 0;background:white;margin:20px 0;border-radius:12px}
-        h2{font-size:2rem;color:#1e293b;margin-bottom:30px}
-        .tag{display:inline-block;background:#eff6ff;color:#2563eb;padding:8px 16px;border-radius:20px;margin:5px;font-size:0.9rem;font-weight:500}
-        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px}
-        .card{background:#f8fafc;padding:25px;border-radius:8px;border:1px solid #e2e8f0}
-        .card h3{color:#1e293b;margin-bottom:10px}
-        .card .date{color:#64748b;font-size:0.9rem;margin-bottom:10px}
-        footer{background:#1e293b;color:white;text-align:center;padding:40px 0;margin-top:40px}
-        @media(max-width:768px){.hero h1{font-size:2rem}.nav-links{display:none}}
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Surjakanta Lairenmayum | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+.profile-container{
+    margin-bottom:30px;
+}
+
+.profile-pic{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #22d3ee;
+    box-shadow:
+    0 0 20px rgba(34,211,238,.6),
+    0 0 40px rgba(168,85,247,.3);
+    transition:.4s ease;
+}
+
+.profile-pic:hover{
+    transform:scale(1.08);
+    box-shadow:
+    0 0 30px rgba(34,211,238,.8),
+    0 0 60px rgba(168,85,247,.6);
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(15,23,42,0.95);
+    backdrop-filter:blur(10px);
+    padding:20px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.5rem;
+    font-weight:700;
+    color:#38bdf8;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    position:relative;
+    transition:0.3s;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:#38bdf8;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:15px;
+    transition:.3s;
+}
+
+.hero-content h1:hover{
+    color:#38bdf8;
+    text-shadow:0 0 25px rgba(56,189,248,.8);
+}
+
+.hero-content h2{
+    color:#38bdf8;
+    font-weight:400;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    max-width:700px;
+    margin:auto;
+    color:#cbd5e1;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    border-radius:30px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(56,189,248,.5);
+}
+
+/* SECTION */
+
+section{
+    padding:80px 10%;
+    animation:fadeUp 1s ease;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:#38bdf8;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ABOUT */
+
+.about{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    line-height:1.8;
+    color:#cbd5e1;
+}
+
+/* SKILLS */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:20px;
+    position:relative;
+    overflow:hidden;
+    transition:.4s;
+    cursor:pointer;
+}
+
+.skill-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
+
+.skill-card::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.2),
+    transparent);
+    transition:.8s;
+}
+
+.skill-card:hover::before{
+    left:100%;
+}
+
+.skill-card h3{
+    margin-bottom:10px;
+    color:#38bdf8;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+}
+
+.item{
+    background:#1e293b;
+    margin-bottom:20px;
+    padding:25px;
+    border-left:5px solid #38bdf8;
+    border-radius:15px;
+    transition:.3s;
+}
+
+.item:hover{
+    transform:translateX(10px);
+    border-left-color:#60a5fa;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.item h3{
+    color:#38bdf8;
+    margin-bottom:8px;
+}
+.hero-img img{
+    width:220px;
+    height:220px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin:15px 0;
+    font-size:1.1rem;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:#020617;
+    color:#94a3b8;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+nav ul li{
+    margin:10px;
+}
+}
+.whatsapp-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:500;
+    transition:.3s ease;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(37,211,102,.4);
+}
+.email-link{
+    color:#22d3ee;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.email-link:hover{
+    color:#8b5cf6;
+    text-decoration:underline;
+}
+
+</style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Surjakanta.</div>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#contact">Contact</a>
-                    <a href="mailto:lsurjakanta4@gmail.com" class="btn">Hire me</a>
-                </div>
-            </nav>
-        </div>
-    </header>
 
-    <div class="hero">
-        <div class="container">
-            <img src="SURJAKANTA.jpeg" alt="Surjakanta Lairenmayum" style="width:150px; height:150px; border-radius:50%; object-fit:cover; margin-bottom:20px; border:3px solid #2563eb;">
-            <h1>A trainer who actually <span class="highlight">listens.</span></h1>
-            <p>I'm Surjakanta Lairenmayum — an IT Trainer and Computer Teacher. Over the past several years I've worked closely with students at SCC and ISLC, helping them build practical, employable digital skills.</p>
-            <p>My focus: real skills, real practice, real outcomes. From Word to Tally + GST workflow, from CSS layouts to Photoshop posters — every concept is taught with examples students can apply immediately.</p>
-            <a href="#contact" class="btn">Contact Me</a>
-        </div>
-    </div>
+<nav>
+<div class="logo">SL</div>
 
-    <div class="container">
-        <section id="skills">
-            <h2>Core Skills</h2>
-            <div>
-                <span class="tag">HTML & CSS</span>
-                <span class="tag">Photoshop CS3</span>
-                <span class="tag">DTP - Corel Draw</span>
-                <span class="tag">MS Office</span>
-                <span class="tag">Tally ERP</span>
-                <span class="tag">Computer Fundamentals</span>
-                <span class="tag">Video Editing</span>
-                <span class="tag">Canva</span>
-                <span class="tag"> Adobe Express</span>
-                <span class="tag">Page Maker</span>
-            </div>
-        </section>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#courses">Courses</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>Computer Teacher (IT Trainer)</h3>
-                    <div class="date">SCC - Sky Computer Center | 2025 - Present</div>
-                </div>
-                <div class="card">
-                    <h3>Computer Teacher (IT Trainer)</h3>
-                    <div class="date">ISLC - Integrated Software Learning | 2024 - Present</div>
-                </div>
-                <div class="card">
-                    <h3>Computer Hardware Internship</h3>
-                    <div class="date">POINTREX DIGITAL | 2023</div>
-                    <p>Hardware assembly, software installation, troubleshooting</p>
-                </div>
-            </div>
-        </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>B.A. Sociology (Honours)</h3>
-                    <div class="date">Imphal College | 2020 – 2023</div>
-                </div>
-                <div class="card">
-                    <h3>HSE (12th)</h3>
-                    <div class="date">Millennium Institute of Sciences | 2018 - 2020</div>
-                </div>
-                <div class="card">
-                    <h3>HSLCE (10th/Matric)</h3>
-                    <div class="date">Don Bosco High School | 2007 - 2018</div>
-                </div>
-            </div>
-        </section>
 
-                <section id="education">
-            <h2>Courses & Certifications</h2>
-            <div class="skills-grid">
-                <div class="card">
-                    <h3>Digital Video Editing</h3>
-                    <div class="date">MSFTI | Sep - Oct 2023</div>
-                </div>
-                <div class="card">
-                    <h3>Traning On UAV/Drone Technology</h3>
-                    <div class="date">NIELIT | Apr - May 2022</div>
-                </div>
-                <div class="card">
-                    <h3>CCC - NIELIT</h3>
-                    <div class="date">Course on Computer Concept | Jan - Mar 2022</div>
-                </div>
-                <div class="card">
-                    <h3>DCA - Dploma in Computer Application</h3>
-                    <div class="date">Pointrex | Sep 2021 - Feb 2022</div>
-                </div>
-                <div class="card">
-                    <h3>CFA - Computerised Financial Accounting in Tally ERP</h3>
-                    <div class="date">Pointrex | Mar - May 2022</div>
-                </div>
-                <div class="card">
-                    <h3>DTP - Desktop Publishing</h3>
-                    <div class="date">Pointrex | Jun - Sep 2022</div>
-                </div>
-                <div class="card">
-                    <h3>PCOA - Pointrex Course on Office Automation</h3>
-                    <div class="date">Pointrex | Sep 2021 - Sep 2022</div>
-                </div>
-                <div class="card">
-                    <h3>DTP - Desktop Publishing</h3>
-                    <div class="date">Iboombi Institute of Education | Feb - May 2024</div>
-                </div>
-            </div>
-        </section>
+<section class="hero">
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p><strong>Phone:</strong> <a href="tel:+917629945029">+91 762-994-5029</a></p>
-            <p><strong>Email:</strong> <a href="mailto:lsurjakanta4@gmail.com">lsurjakanta4@gmail.com</a></p>
-            <p><strong>Location:</strong> Uripok Huidrom Leikai, Imphal West, Manipur</p>
-            <!-- <p><strong>WhatsApp:</strong> <a href="https://wa.me/917629945029?text=Hi%20Surjakanta,%20I%20saw%20your%20portfolio" target="_blank">Message me on WhatsApp</a></p> -->
+<div class="hero-content">
+    <div class="profile-container">
+<img src="SURJAKANTA.jpeg" alt="Surjakanta" class="profile-pic">
+</div>
 
-            <br>
-            <br>
-            <br>
-            <a href="https://wa.me/917629945029" class="btn" style="background:#25D366; margin-left:10px;" target="_blank"> WhatsApp Me </a>
-            
-        </section>
-    </div>
+<h1>Surjakanta Lairenmayum</h1>
 
-    <footer>
-        <p>© 2026 Surjakanta Lairenmayum | IT Trainer & DTP Specialist</p>
-    </footer>
+<h2>IT Trainer • Computer Teacher • Video Editor</h2>
+
+<p>
+Passionate IT Trainer and Digital Content Creator with expertise in
+Computer Applications, MS Office, Hardware Troubleshooting,
+Graphic Design, Video Editing and Web Design.
+Dedicated to empowering learners through technology and creativity.
+</p>
+
+<a href="#contact" class="btn">Hire Me</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+
+<p>
+<p>
+I am a Computer Teacher and IT Trainer based in Imphal, Manipur with 2+ years of experience in teaching computer fundamentals, office automation, graphic design, desktop publishing, hardware troubleshooting, and digital content creation. My goal is to use technology and creativity to help students and organizations achieve their goals while continuously improving my technical and professional skills.
+</p>
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill-card">
+<h3>Microsoft Office</h3>
+<p>Word, Excel, PowerPoint, Access</p>
+</div>
+
+<div class="skill-card">
+<h3>Web Development</h3>
+<p>HTML & CSS</p>
+</div>
+
+<div class="skill-card">
+<h3>Graphic Design</h3>
+<p>Photoshop, CorelDraw, PageMaker</p>
+</div>
+
+<div class="skill-card">
+<h3>Video Editing</h3>
+<p>Canva, Adobe Express, Digital Editing</p>
+</div>
+
+<div class="skill-card">
+<h3>Computer Hardware</h3>
+<p>Assembly, Installation & Troubleshooting</p>
+</div>
+
+<div class="skill-card">
+<h3>Tally ERP</h3>
+<p>Computerised Financial Accounting</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="experience">
+
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="item">
+<h3>Computer Teacher</h3>
+<p>SKY Computer Center</p>
+<p>2025 - Present</p>
+</div>
+
+<div class="item">
+<h3>Computer Teacher Training Internship</h3>
+<p>ISLC - Integrated Software Learning & Coaching</p>
+<p>2024 - Present</p>
+</div>
+
+<div class="item">
+<h3>Computer Hardware Technician Intern</h3>
+<p>Pointrex Digital</p>
+<p>2023</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="education">
+
+<h2 class="section-title">Education</h2>
+
+<div class="timeline">
+
+<div class="item">
+<h3>B.A Sociology (Honours)</h3>
+<p>Imphal College</p>
+<p>2020 - 2023</p>
+</div>
+
+<div class="item">
+<h3>Higher Secondary Education</h3>
+<p>Millennium Institute of Sciences</p>
+<p>2018 - 2020</p>
+</div>
+
+<div class="item">
+<h3>High School</h3>
+<p>Don Bosco High School</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="courses">
+
+<h2 class="section-title">Courses & Certifications</h2>
+
+<div class="timeline">
+
+<div class="item">Digital Video Editing – MSFTI</div>
+
+<div class="item">Training on UAV / Drone Technology – NIELIT</div>
+
+<div class="item">CCC Certification – NIELIT</div>
+
+<div class="item">Diploma in Computer Application (DCA)</div>
+
+<div class="item">Desktop Publishing (DTP)</div>
+
+<div class="item">Computerised Financial Accounting (Tally ERP)</div>
+
+<div class="item">Office Automation (PCOA)</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+
+<p>📞 +91 7629945029</p>
+
+<p>📧 <a href="mailto:lsurjakanta4@gmail.com" class="email-link">
+    lsurjakanta4@gmail.com
+</a></p>
+
+<p>📍 Imphal, Manipur, India</p>
+
+<p>🌐 English • Hindi • Manipuri</p>
+<a href="https://wa.me/917629945029" class="whatsapp-btn">
+    Chat on WhatsApp
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 Surjakanta Lairenmayum. All Rights Reserved.</p>
+
+</footer>
+
 </body>
 </html>
