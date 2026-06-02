@@ -34,10 +34,12 @@ body{
     height:220px;
     border-radius:50%;
     object-fit:cover;
+    object-position:center top;
     border:5px solid #22d3ee;
+
     box-shadow:
-    0 0 20px rgba(34,211,238,.6),
-    0 0 40px rgba(168,85,247,.3);
+    0 0 20px rgba(34,211,238,.6);
+
     transition:.4s ease;
 }
 
@@ -336,6 +338,49 @@ nav ul li{
 .email-link:hover{
     color:#8b5cf6;
     text-decoration:underline;
+}
+@media(max-width:768px){
+
+    .hero{
+        padding-top:140px;
+        padding-left:20px;
+        padding-right:20px;
+    }
+
+    .profile-pic{
+        width:160px;
+        height:160px;
+    }
+
+    .hero-content h1{
+        font-size:2.2rem;
+        line-height:1.2;
+    }
+
+    .hero-content h2{
+        font-size:1rem;
+    }
+
+    .hero-content p{
+        font-size:0.95rem;
+        line-height:1.7;
+    }
+
+    nav{
+        flex-direction:column;
+        padding:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-top:10px;
+        gap:10px;
+    }
+
+    section{
+        padding:70px 20px;
+    }
 }
 
 </style>
