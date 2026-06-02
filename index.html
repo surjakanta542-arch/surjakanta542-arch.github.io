@@ -375,43 +375,71 @@ nav ul li{
 }
 @media(max-width:768px){
 
-    .hero{
-        padding-top:140px;
-        padding-left:20px;
-        padding-right:20px;
-    }
+.menu-btn{
+    display:block;
+}
 
-    .profile-pic{
-        width:160px;
-        height:160px;
-    }
+nav{
+    padding:20px;
+}
 
-    .hero-content h1{
-        font-size:2.2rem;
-        line-height:1.2;
-    }
+nav ul{
+    position:fixed;
+    top:0;
+    right:-100%;
 
-    .hero-content h2{
-        font-size:1rem;
-    }
+    width:250px;
+    height:100vh;
 
-    .hero-content p{
-        font-size:0.95rem;
-        line-height:1.7;
-    }
+    background:#111827;
 
-    nav{
-        flex-direction:column;
-        padding:15px;
-    }
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
 
-    nav ul{
-        flex-wrap:wrap;
-        justify-content:center;
-        margin-top:10px;
-        gap:10px;
-    }
+    gap:35px;
 
+    transition:.4s ease;
+}
+
+nav ul.active{
+    right:0;
+}
+
+nav ul li a{
+    font-size:1.2rem;
+}
+
+.hero{
+    padding-top:140px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.profile-pic{
+    width:160px;
+    height:160px;
+}
+
+.hero-content h1{
+    font-size:2.2rem;
+    line-height:1.2;
+}
+
+.hero-content h2{
+    font-size:1rem;
+}
+
+.hero-content p{
+    font-size:0.95rem;
+    line-height:1.7;
+}
+
+section{
+    padding:70px 20px;
+}
+}
     section{
         padding:70px 20px;
     }
@@ -423,18 +451,30 @@ nav ul li{
 <body>
 
 <nav>
+
 <div class="logo">SL</div>
 
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#courses">Courses</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+<div class="menu-btn" onclick="toggleMenu()">
+    ☰
+</div>
 
+<ul id="sidebar">
+
+<li><a href="#about" onclick="closeMenu()">About</a></li>
+
+<li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+
+<li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+
+<li><a href="#education" onclick="closeMenu()">Education</a></li>
+
+<li><a href="#courses" onclick="closeMenu()">Courses</a></li>
+
+<li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+
+</ul>
+
+</nav>
 
 
 <section class="hero">
